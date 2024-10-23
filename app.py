@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions
 from selenium.webdriver.common.by import By
+from time import sleep
 
 opts = ChromeOptions()
 opts.add_experimental_option("detach", True)
@@ -15,8 +16,15 @@ navegador.get(url)
 campo_nome = navegador.find_element(By.ID,"nome")
 campo_nome.send_keys("Thomas")
 
+sleep(3)
+
 campo_mensagem = navegador.find_element(By.ID, "mensagem")
 campo_mensagem.send_keys("Salveeeeee")
+
+sleep(3)
+
+botao = navegador.find_element(By.XPATH, "/html/body/form/input[2]")
+botao.click()
 
 print(navegador.title)
 
