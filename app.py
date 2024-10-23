@@ -9,8 +9,14 @@ opts.add_experimental_option("detach", True)
 
 navegador = webdriver.Chrome(options = opts)
 
-url = r"C:\Users\04396\Desktop\projetos\webscrap\produtos.html"
+url = r"C:\Users\04396\Desktop\projetos\webscrap\contato.html"
 navegador.get(url)
+
+campo_nome = navegador.find_element(By.ID,"nome")
+campo_nome.send_keys("Thomas")
+
+campo_mensagem = navegador.find_element(By.ID, "mensagem")
+campo_mensagem.send_keys("Salveeeeee")
 
 print(navegador.title)
 
